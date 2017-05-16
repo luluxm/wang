@@ -1,0 +1,51 @@
+<ion-view view-title="" hide-nav-bar="true" hide-tabs="true">
+  <style>
+    .tu1
+    {
+      width: 100%;
+      min-height: 100%;
+      background: url("img/1.jpg") no-repeat center;
+      background-size:100% 100% ;
+
+    }
+    .tu2
+    {
+      width: 100%;
+      min-height: 100%;
+      background: url("img/2.jpg") no-repeat center;
+      background-size:100% 100% ;
+
+    }
+    .tu3
+    {
+      width: 100%;
+      min-height: 100%;
+      background: url("img/3.jpg") no-repeat center;
+      background-size:100% 100% ;
+
+    }
+
+  </style>
+  <ion-content style="padding: 0;" ng-controller="OneLubCtrl" >
+    <ion-slide-box auto-play="false" pager-click="false" show-pager="true" >
+      <ion-slide>
+        <div class="box blue tu1" >
+          <div style=" height: 100vh" ></div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow tu2">
+          <div style=" height: 100vh"></div>
+        </div>
+      </ion-slide>
+      <ion-slide on-slide-changed="slideHasChanged(index)">
+        <div class="box pink tu3">
+          <div style="height: 100vh;" ></div>
+          <div style="background-color:rgba(0,0,0,0);color:#ffffff;width: 4rem;height: 2rem;position: absolute;top: 50%;margin-top: -2rem;left: 50%;margin-left: -1rem;" ng-click="myzou()">
+            进入主页
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,319 @@
+<ion-view view-title="首页" hide-nav-bar="true"><!--hide-nav-bar隐藏导航栏-->
+  <div ng-controller="HomeCtrl">
+    <div class="list bae">
+      <div class="item item-input-inset" style="width: 100%;background: rgba(0,0,0,0);border: 0">
+        <label class="item-input-wrapper" ng-click="doSearch()" style="float: left;margin:3rem 0 0 0.2rem;background: #ffffff">
+          <div class="">
+            <i class="ion ion-search" style="background: rgba(0,0,0,0)" ></i>
+          </div>
+          <input  type="text" placeholder="搜索目的地" ng-model="searchText"
+          >
+        </label>
+
+      </div>
+    </div>
+
+  <ion-content  style="background: #f7faf8">
+
+    <style>
+      .box{
+        width: 100%;height: 4.65rem;
+      }
+      .box img{
+        width: 100%; height: auto;
+      }
+.tu{
+  float: left;
+  margin-left: 0.22rem;
+}
+a{
+  color: #3eb382;text-decoration: none;
+}
+.bae{
+  width: 100%;
+  height: 4rem;
+  background: url("img/IMG_0605_02.png") no-repeat center;
+  background-size: 100% 100%;
+  z-index: 999;
+}
+.bae label{
+  border: 1px solid #23bb63;
+}
+      .tu img{
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.2rem;
+      }
+.item{
+  background: rgba(0,0,0,0);
+  border:0;
+}
+.more{
+    float: right;
+  margin-top: 0.2rem;
+  }
+.sy-img{
+  width: 100%;
+        height: auto;
+        overflow: hidden;
+      }
+.sy-img img{
+  height: 100%;
+}
+      .titleItem{
+   height: 2rem;
+ }
+      .slider-pager i{
+        color: #ffffff;
+      }
+ .scroll-bar-indicator{
+opacity: 0;
+}
+    </style>
+
+    <div class="list" style="padding-top: 5rem">
+      <!--item-avatar图片和文字的,titleItem做标题-->
+
+      <div class="item titleItem">
+        <div class="tu">
+          <img src="img/IMG_0605_03.png"/>
+        </div>
+        <p class="more">
+          <a  href="#/tab/tuijian">更多</a>
+          <span style="color:#3eb382; " class="icon ion-chevron-right"></span>
+        </p>
+        <h2 style="margin-left: 1.5rem">热门玩法</h2>
+        <p style=" color: #b4b9bf;
+  font-size: 0.48rem;margin-left: 1.5rem">
+各地玩法一网打尽
+        </p>
+
+      </div>
+      <div class="item item-body">
+        <div class="row" ng-repeat="chat in chats"><!--一维数组-->
+          <div class="col col-50" ng-repeat="cha in chat" ng-click="playZ(cha.id)">
+            <div class="sy-img">
+              <img class="full-image" src="{{cha.imgsrc}}"/>
+            </div>
+            <h2>
+
+            </h2>
+            <p>
+
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="xian" style="bottom: 0"></div>
+    </div>
+    <div class="list">
+      <!--item-avatar图片和文字的,titleItem做标题-->
+      <!--悠扬清新时光-->
+      <div class="item titleItem">
+        <div class="tu">
+          <img src="img/4444.png"/>
+        </div>
+        <h2 style="margin-left: 1.5rem">悠扬清新时光</h2>
+        <p style=" color: #b4b9bf;
+  font-size: 0.48rem;margin-left: 1.5rem">
+          惬意午后的暖阳小恬
+        </p>
+      </div>
+
+
+
+          <ion-scroll zooming="true" direction="x">
+            <div class="lists">
+              <ul class="">
+                <li>
+                  <img src="img/IMG_0606_03.png"/>
+                  <h5>￥365   厦门环岛路 增姐庵2号</h5>
+                  <p>
+                <span>
+
+               <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+ <div class="pingjia">
+   365评价
+ </div>
+                </span>
+                  </p>
+                </li>
+                <li>
+                  <img src="img/IMG_0607_03.png"/>
+                  <h5>￥365   厦门环岛路 增姐庵2号</h5>
+                  <p>
+                <span>
+
+               <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+ <div class="pingjia">
+   365评价
+ </div>
+                </span>
+                  </p>
+                </li>
+                <li>
+                  <img src="img/IMG_0608_03.png"/>
+                  <h5>￥365   厦门环岛路 增姐庵2号</h5>
+                  <p>
+                <span>
+
+               <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span style="font-size: 0.4rem" class="xing">★</span>
+                   <span  style="font-size: 0.4rem"class="xing">★</span>
+ <div class="pingjia">
+   365评价
+ </div>
+                </span>
+                  </p>
+                </li>
+                <li>
+                  <img src="img/IMG_0608_07.png"/>
+                  <h5>￥365   厦门环岛路 增姐庵2号</h5>
+                  <p>
+                <span>
+
+               <span class="xing">★</span>
+                   <span class="xing">★</span>
+                   <span class="xing">★</span>
+                   <span class="xing">★</span>
+                   <span class="xing">★</span>
+ <div class="pingjia">
+   365评价
+ </div>
+                </span>
+                  </p>
+                </li>
+              </ul>
+
+            </div>
+          </ion-scroll>
+
+
+
+      <div class="xian" style="bottom: 0"></div>
+    </div>
+    <!--轮播图1-->
+    <div class="list">
+      <!--item-avatar图片和文字的,titleItem做标题-->
+      <!--悠扬清新时光-->
+      <div class="item titleItem">
+        <div class="tu">
+          <img src="img/IMG_0606_06.png"/>
+        </div>
+        <p class="more">
+          <a  href="#/tab/tuijian">更多</a>
+          <span style="color:#3eb382; " class="icon ion-chevron-right"></span>
+        </p>
+        <h2 style="margin-left: 1.5rem">有爱有心有快乐</h2>
+        <p style=" color: #b4b9bf;
+  font-size: 0.48rem;margin-left: 1.5rem">
+          relax一下，瞬间返老还童
+        </p>
+      </div>
+
+      <ion-slide-box  style="margin-top: 0.7rem" auto-play="true" slide-interval="3000" does-continue="true" delegate-handle="slideimgs">
+        <ion-slide  ng-repeat="lun in lunb">
+          <div class="box" ng-repeat="lu in lun">
+            <!--//窗口下接受轮播数据-->
+            <img src="{{lu.imgsrc}}"/>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+
+
+
+    </div>
+    <!--//特色体验-->
+    <div class="list">
+      <!--item-avatar图片和文字的,titleItem做标题-->
+      <!--悠扬清新时光-->
+      <div class="item titleItem">
+        <div class="tu">
+          <img src="img/images/IMG_0611_05.png"/>
+        </div>
+        <h2 style="margin-left: 1.5rem">特色体验</h2>
+        <p style=" color: #b4b9bf;
+  font-size: 0.48rem;margin-left: 1.5rem">
+          这些房东将带你进行一场新体验
+        </p>
+      </div>
+      <div class="tud" ng-repeat="character in characteristic">
+        <div ng-repeat="charac in character">
+        <img style="width: 3.6rem;height: 3.8rem;position: absolute;right:
+      -0.25rem;top: -0.25rem;z-index: 999999" src="{{charac.imgsrc}}"/>
+
+        <div style="width: 5rem;height: 1.9rem">
+        <div class="tou_xiang">
+          <img style="width: 100%;height:auto;" src="img/person_touxiang.png"/>
+        </div>
+        <div style="margin: 0.2rem 0 0 0.3rem;float: left;">{{charac.name}}
+        <p style=" color: #b4b9bf;
+  font-size: 0.45rem;">
+          {{charac.lastText}}
+        </p></div>
+        </div>
+          <p style="color: #83888d;font-size: 0.45rem;width: 4.5rem;margin-left: 0.8rem;text-indent: 0.7rem">
+            {{charac.Advantage}}
+          </p>
+        <button  class="button button-small" style="background: #22bb62;color: #ffffff;width: 3rem;line-height: 0.8rem;margin-left: 0.8rem">
+         去看看
+          <span style="margin-left: 0.5rem" class="icon ion-chevron-right"></span>
+        </button>
+        </div>
+      </div>
+      <!--//轮播图2-->
+      <ion-slide-box  style="margin-top: 0.7rem" auto-play="true" slide-interval="3000" does-continue="true" delegate-handle="slideimgs">
+        <ion-slide  ng-repeat="seconD in seconDs">
+          <div class="box" ng-repeat="secon in seconD">
+            <!--//窗口下接受轮播数据-->
+            <img src="{{secon.imgsrc}}"/>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+
+      <div class="xian" style="bottom: -0.6rem"></div>
+    </div>
+<!--逛不完的艺术范-->
+    <div class="list">
+      <!--item-avatar图片和文字的,titleItem做标题-->
+      <!--悠扬清新时光-->
+      <div class="item titleItem">
+        <div class="tu">
+          <img src="img/IMG_06156_03.png"/>
+        </div>
+        <h2 style="margin-left: 1.5rem">逛不完的艺术范</h2>
+        <p style=" color: #b4b9bf;
+  font-size: 0.48rem;margin-left: 1.5rem">
+          文艺青年在这激发灵感
+        </p>
+      </div>
+      <div class="" style="margin-top: 0.7rem">
+        <a class="item item-thumbnail-left" ng-repeat="artis in artist">
+          <img src="{{artis.imgsrc}}" style="width: 100%;height: 2rem;">
+          <h2>{{artis.title}}</h2>
+          <p>{{artis.main}}</p>
+        </a>
+      </div>
+      <div class="footer">
+        — 亲,到底啰 —
+      </div>
+    </div>
+
+
+
+
+  </ion-content>
+  </div>
+</ion-view>
+

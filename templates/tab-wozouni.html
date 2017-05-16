@@ -1,0 +1,32 @@
+<ion-view view-title="玩法展示" hide-nav-bar="true">
+  <!--按钮和头部文字-->
+  <style>
+    .box img{
+      width: 100%;
+      height: 100vh;
+    }
+    .slider-pager{
+      top:0.7rem;
+    }
+  </style>
+  <ion-content ng-controller="wozouniCtrl">
+    <ion-slide-box  auto-play="false" does-continue="true" delegate-handle="slideimgs">
+      <ion-slide ng-repeat="tibetscang in tibetscangc">
+        <div class="box" style="height: auto;">
+          <!--//窗口下接受轮播数据-->
+          <img src="{{tibetscang.imgsrc}}" style="width: 100%;"/>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    <div class="cha" style="z-index: 9999999" ng-click="chahAoc()">
+      ×
+    </div>
+    <div class="list wei">
+      <div class="dingzh">
+        查看玩法推荐
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>
+

@@ -1,0 +1,51 @@
+<ion-view view-title="订单"  hide-nav-bar="true">
+  <style>
+    .video_box{
+      width: 100%;
+      height: 12rem;
+    }
+    .xinxi{  width: 100%;height: 100%;color: #ffffff;
+      text-align: center;line-height: 100%;
+      position: absolute;
+      left: 0;
+      top:0;
+    }
+    .xinxi img{
+      width: 100%;
+      height: auto;
+    }
+    .dinwe{
+      width: 90%;
+      margin-left: 5%;
+      border-radius: 5px;
+      margin-top:1rem;
+      text-align: center;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      background: linear-gradient(to right,#00c56a 30px,#00b87c);
+    }
+  </style>
+  <div ng-controller="OrderCtrl" class="">
+
+    <div class="bar bar-header " style="background: linear-gradient(to right,#00c866 30px,#00b481); ">
+      <h1 class="title" style="color: #FFFFFF;">订单</h1>
+    </div>
+    <ion-content  style="background: #f7faf8;">
+      <div class="bar bar-header item-input-inset" style="height:100%;width: 100%;margin-top:1.44rem;margin-bottom: 0;">
+        <div class="study_top">
+          <div class="video_box" style="width: 100%">
+            <img class="xinxi" src="img/images/deng_02.png"/>
+          </div>
+        </div>
+      </div>
+
+      <!--style="z-index: 999"先显示登陆-->
+      <div class="dinwe">
+        <a style="color: #ffffff;">立即登录</a>
+      </div>
+
+    </ion-content>
+  </div>
+
+</ion-view>
+

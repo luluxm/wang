@@ -1,0 +1,147 @@
+<ion-view view-title="分类推荐" hide-nav-bar="true">
+  <style>
+    .row_spe{
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .col_spe{
+      text-align: center;
+    }
+    a{
+      color: #3eb382;text-decoration: none;
+    }
+    .more{
+      float: left;
+      margin-top: 0.4rem;
+      font-size: 0.35rem;
+    }
+    .lessonlist{
+      background: #e8e8e8;padding-bottom: 8px;overflow: hidden;
+    }
+    .lessonlist li{
+      float: left;margin: 5px 0 0 15px;width: 20%;border: 1px solid #ccc;
+      background: #ffffff;line-height: 40px;
+      text-align: center;
+    }
+    .price{background: #e8e8e8;}
+    .price li{line-height: 40px;border: 1px solid #ccc;padding-left: 2rem;}
+    .fang{
+      width: 6rem;
+      height: 3rem;
+    }
+  </style>
+  <div  ng-controller="TuijianCtrl">
+    <!--搜索框-->
+    <div class="bar bar-header item-input-inset" >
+      <p class="more">
+        <span style="color:#3eb382; " class="icon ion-chevron-left"></span>
+        <a  href="#/tab/home">返回</a>
+      </p>
+      <div style="width: 80%;float: left;
+      margin-left: 5%">
+      <label class="item-input-wrapper" style="background: #ffffff">
+        <!--ng-keyup键值-->
+        <input  type="search" placeholder="请输入搜索词"  ng-model="searchInputText"
+                ng-keyup="myKeyup($event,searchInputText)">
+
+        <i class="icon ion-ios-search placeholder-icon"
+           ></i>
+      </label>
+      </div>
+    </div>
+    <!--26英文字母-->
+    <div class="zuo" style="z-index: 99999" ng-show="mycit">
+      附近搜索
+      <ul>
+        <li ng-repeat="lett in letter" ng-click="dfcF()">{{lett.lettes}}</li>
+      </ul>
+    </div>
+    <!--筛选-->
+    <div class="row row_spe" style="margin-bottom: 0">
+      <div class="col col-30 col_spe" ng-style="hcolor" ng-click="togglec()" style="border-right:1px solid #e8e8e8">短租列表
+        <i class="icon ion-chevron-down"></i>
+      </div>
+      <div class="col col-30 col_spe" ng-style="vcolor" ng-click="mypriceto()" style="border-right:1px solid #e8e8e8">价格
+        <i class="icon ion-chevron-down"></i>
+      </div>
+      <div class="col col-30 col_spe" ng-style="ccolor" ng-click="mycity()"
+          >城市
+        <i class="icon ion-chevron-down"></i>
+      </div>
+    </div>
+    <!--ion-content写在外面是用来固定的相当于 position: fixed;-->
+    <ion-content style="margin-top: 2.8rem">
+      <!--课程列表 显示隐藏修改的
+      <!--<div class="lessonlist">
+        <ul>
+          <li ng-repeat="courseListBtn in courseListBtns"
+              ng-click="courseJieshou('',courselis.titleEn,'')">{{courseListBtn.btnName}}</li>
+        </ul>
+      </div>-->
+      <!--价格-->
+    <!--  <div class="price" ng-show="myprice">
+        <ul>
+          <li ng-repeat="priceBtn in priceBtns"
+              ng-click="priceJ('{{priceBtn.price}}')">{{priceBtn.btnName}}</li>
+        </ul>
+      </div>
+      <div class="price" ng-show="mycit">
+        <ul>
+          <li ng-repeat="priceBtn in priceBtns"
+              ng-click="priceJ('{{priceBtn.price}}')">{{priceBtn.btnName}}</li>
+        </ul>
+      </div>-->
+
+      <!--短租-->
+      <div class="content" ng-show="mylist">
+        <div class="list">
+          <!--ng-click="tz_study(list.ID)"跳转到视频的页面-->
+          <a class="item item-thumbnail-left" ng-repeat="cours in course" style="padding-left: 120px">
+            <img src="{{cours.imgsrc}}" style="height: auto;max-width: 100px">
+            <h2>{{cours.titleEn}}</h2>
+            <p>{{cours.price | currency}}</p>
+          </a>
+        </div>
+        </div>
+<!--价格-->
+      <div class="content" ng-show="myprice">
+      <div class="list">
+        <!--ng-click="tz_study(list.ID)"跳转到视频的页面-->
+        <a class="item item-thumbnail-left" ng-repeat="cri in criy" style="padding-left: 120px">
+          <img src="{{cri.imgsrc}}" style="height: auto;max-width: 100px">
+          <h2>{{cri.titleEn}}</h2>
+          <p>{{cri.price | currency}}</p>
+        </a>
+      </div>
+    </div>
+      <div class="content" ng-show="mycit" >
+        <div class="list">
+          <!--ng-click="tz_study(list.ID)"跳转到视频的页面-->
+          <div class="item titleItem" style="border: 0">
+            <h4>全部城市</h4>
+            </div>
+          <div  ng-repeat="cit in city">
+          <div style="width: 85%;height: 0.7rem;background:#e9e9ea;float:left;margin-left: 5%">
+          {{cit.zu}}
+          </div>
+
+          <div class="ctiy" ng-repeat="ci in cit.code">
+         {{ci.cityc}}
+          </div>
+          </div>
+        </div>
+
+      </div>
+      <!--下拉刷新ion-refresher-->
+      <ion-refresher
+        pulling-text="释放立即刷新"
+        on-refresh="doRefresh()">
+      </ion-refresher>
+      <!--列表-->
+      <!--下拉列表加载-->
+      <ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="mordata">
+      </ion-infinite-scroll>
+
+    </ion-content>
+  </div>
+</ion-view>
+

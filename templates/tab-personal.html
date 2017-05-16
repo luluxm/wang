@@ -1,0 +1,61 @@
+<ion-view view-title="个人中心" hide-nav-bar="true">
+  <div ng-controller="PersonalCtrl">
+
+
+
+
+  <ion-content style="background-color: #f7faf8">
+<style>
+  a{
+    color: #3eb382;text-decoration: none;
+    text-align: center;
+    font-size: 0.4rem;
+  }
+  .bae{
+    width: 100%;
+    height: 5.8rem;
+    background: url("img/my_02.png") no-repeat center;
+    background-size: 100% 100%;
+    z-index: 999;
+  }
+  .item ul li{
+    position: relative;
+    margin-left: 0.3rem;
+    margin-top: 0.45rem;
+    font-size: 0.25rem;
+    font-weight: bold;
+    width: 2.5rem;
+  }
+
+</style>
+    <div class="list bae">
+      <div class="item item-input-inset" style="width: 100%;background: rgba(0,0,0,0);border: 0">
+        <div class="list" style="padding: 1.2rem 0.8rem 0 3.8rem">
+          <div class="item item-body" style="width: 2.5rem;height: 2.5rem;background-color: transparent;border: 0">
+            <img class="full-image" src="img/img2/456123_03.png">
+          </div>
+          <div style="background: #FFFFFF;text-align: center;line-height:0.7rem;width: 2.65rem;height: 0.8rem;border-radius: 2px">
+          <a ng-click="pryeDeng()">
+            马上登录
+          </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item item-body" style="border: 0;position: absolute;top:5rem;
+      left: 50%;margin-left:-45%;width: 90%;height: auto;" ng-repeat="myim in myimg">
+     <ul style="height: 90%;background: #FFFFFF">
+<li style="margin-bottom: 0;float: left;" ng-repeat="myi in myimg">
+  <img style="width: 1rem;height: auto; margin-left:30% " src="{{myi.imgsrc}}"/>
+  <div style="padding: 0;text-align: center">{{myi.title}}</div>
+</li>
+     </ul>
+      </div>
+    </div>
+<div class="item item-body" style="margin-top: 8.5rem;width: 90%;margin-left: 5%;border: 0;border-radius: 5px;text-align: center">
+  <a style="font-size: 0.6rem">我是房东</a>
+</div>
+
+  </ion-content>
+  </div>
+</ion-view>
